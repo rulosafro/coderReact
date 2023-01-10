@@ -4,7 +4,7 @@ export const pedirDatos = () => {
   return new Promise ((resolve,reject) => {
     setTimeout(() => {
         resolve(dataStock)
-    }, 2000);
+    }, 200);
   })
 }
 
@@ -12,7 +12,13 @@ export const pedirItemPorId = (id) => {
   return new Promise ((resolve,reject) => {
     setTimeout(() => {
       const item = dataStock.find((el) => el.id === id)
-      resolve(item)
-    },2000)
+        if (item) {
+          resolve(item)
+        } else {
+          reject({
+            error: "No se encontro el prodycto :("
+          })
+        }
+    },200)
   })
 }

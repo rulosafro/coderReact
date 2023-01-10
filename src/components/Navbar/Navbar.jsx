@@ -1,19 +1,21 @@
 import './Navbar.sass'
 import CustomizedBadges from "../CartWidget/CartWidget.jsx";
+import { Link } from 'react-router-dom';
+// @import '../../styles/_colorSass';
 
-export const Navbar = ({}) => {
+export const Navbar = ({bg = "#dddd"}) => {
 
     return (
-        <header className='.navBarRam'>
-            <h1 className='navBarRam__Logo'>RulosAfro Studio</h1>
+        <header className='.navBarRam' style={{background: bg}}>
+            <Link to="/" className='navBarRam__Logo'><h1 className='navBarRam__Logo'>RulosAfro Studio</h1></Link>
             <div></div>
             <div></div>
             <nav>
-                <a href="#">What</a>
-                <a href="#">We</a>
-                <a href="#">Do</a>
+                <Link to="/what">What</Link>
+                <Link to="/we">We</Link>
+                <Link to="/do">Do</Link>
                 <span>|</span>
-                <a href="#">IdeaLab</a>
+                <Link to="/idealab">IdeaLab</Link>
                 <span>|</span>
                 <CustomizedBadges/>
             </nav>

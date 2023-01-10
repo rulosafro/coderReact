@@ -2,25 +2,50 @@ import './App.sass'
 import { Navbar } from "./components/Navbar/Navbar.jsx"
 import { Contenedor } from "./components/Contenedor/Contenedor.jsx"
 import { MyButton } from "./components/MyButton/MyButton.jsx"
-import { Clicker} from './components/Clicker/Clicker.jsx'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { Footer } from './components/Footer/Footer'
+import { Error404 } from './components/Error404/Error404'
+import { Nosotros } from './components/Nosotros/Nosotros'
+import { Mision } from './components/Mision/Mision'
+import { Portfolio } from './components/Portfolio/Portfolio'
+import { Filtros } from './components/Filtros/Filtros'
 
 function App() {
 
   return (
-    <div> 
-      <Navbar/>
-      <Contenedor>
-        {/* <ItemDetailContainer itemId={5}/> */}
-        <ItemListContainer/>
-        {/* <h2> Hello</h2>
-        <p> Chanchito Feliz   </p> */}
-        <MyButton text='hola' variant={1}/>
-        <Clicker/>
-      </Contenedor>
-    </div>
+
+    <BrowserRouter>
+        <Navbar/>
+        {/* <Routes>
+          <Route path='/' element={<Navbar bg="#ddd"/>} />
+          <Route path='*' element={<Navbar/>} />
+        </Routes> */}
+        <Filtros/>
+
+
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/what' element={<Mision/>}/>
+        <Route path='/we' element={<Nosotros/>}/>
+        <Route path='/do' element={<Portfolio/>}/>
+        <Route path='/productos' element={<ItemListContainer/>}/>
+        <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
+        <Route path='/error404' element={ <Error404/>}/>
+        <Route path='*' element={ <Error404/>} />
+        {/* <Route path='*' element={ <Navigate to={"/error404"}/>}/> */}
+
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
   )
 }
 
 export default App
+
+
+{/* <Contenedor>
+  <ItemListContainer/>
+  <MyButton text='hola' variant={1}/>
+</Contenedor> */}

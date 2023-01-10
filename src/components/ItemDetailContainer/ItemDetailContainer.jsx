@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { pedirItemPorId } from '../helpers/pedirDatos';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router';
+
 
 const ItemDetailContainer = (itemId) => {
-  const [] = useState(null)
-  // console.log(item);
+  
+  const [item, setItem] = useState(null)
+  const { categoryId } = useParams()
   
   useEffect(() => {
-    pedirItemPorId(itemId)
+    pedirItemPorId(Number(itemId))
       .then((data) => {
         setItem(data)
       })
@@ -17,7 +20,7 @@ const ItemDetailContainer = (itemId) => {
   return (
     <div>
       {
-        item && <ItemDetail/>
+        item && <ItemDetail {...item}/>
       }
     </div>
   )
