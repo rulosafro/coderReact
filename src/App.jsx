@@ -32,6 +32,8 @@ function App() {
         <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
         <Route path='/busqueda/:busqueda' element={<ItemListContainer/>}/>
         <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
+        <Route path='/coderReact/detail/:itemId' element={<ItemDetailContainer/>}/>
+        <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
         <Route path='/error404' element={ <Error404/>}/>
         <Route path='*' element={ <Error404/>} />
         {/* <Route path='*' element={ <Navigate to={"/error404"}/>}/> */}

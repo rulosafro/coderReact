@@ -17,8 +17,8 @@ const ItemDetailContainer = () => {
 
     pedirItemPorId( Number(itemId) )
       .then((data) => {
-        console.log(data)
-        setItem(data)})
+        setItem(data)
+      })
       .catch((err) => {
         setError(err.error)
       })
