@@ -4,7 +4,7 @@ export const pedirDatos = () => {
   return new Promise ((resolve,reject) => {
     setTimeout(() => {
         resolve(dataStock)
-    }, 500);
+    }, 1000);
   })
 }
 
@@ -19,6 +19,6 @@ export const pedirItemPorId = (id) => {
             error: "No se encontro el prodycto :("
           })
         }
-    },500)
+    },1000)
   })
 }

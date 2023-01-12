@@ -25,13 +25,12 @@ const ItemDetailContainer = () => {
     }, [itemId])
 
   return (
-    <div>
+    <div className='container mx-auto px-4'>
       {
         error
         ? error
         : item && <ItemDetail {...item}/>
       }
-      <p>Hola</p>
     </div>
   )
 }

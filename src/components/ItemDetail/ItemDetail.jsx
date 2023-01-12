@@ -3,7 +3,7 @@ const ItemDetail = ({id, name, stock, category, image, description, price }) => 
 
   return (
     <div>
-      <h2>{name}</h2>
+      <h2 className="bg-green-400">{name}</h2>
       <img src={image} alt={name} />
       <small>{category}</small>
       <p> {description}</p>

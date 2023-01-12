@@ -4,7 +4,7 @@ import './Filtros.sass'
 
 export const Filtros = () => {
   return (
-    <div>
+    <div className='filtrosRow'>
       <p>Filtros</p>
       <ul>
         <li><Link className="filterLink" to="/productos/cat1"> A1</Link></li>

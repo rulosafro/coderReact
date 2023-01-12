@@ -1,7 +1,7 @@
 import './App.sass'
 import { Navbar } from "./components/Navbar/Navbar.jsx"
-import { Contenedor } from "./components/Contenedor/Contenedor.jsx"
-import { MyButton } from "./components/MyButton/MyButton.jsx"
+import { Contenedor } from "./components/1clasesPasadas/Contenedor/Contenedor.jsx"
+import { MyButton } from "./components/1clasesPasadas/MyButton/MyButton.jsx"
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
@@ -25,6 +25,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/coderReact' element={<ItemListContainer/>}/>
         <Route path='/what' element={<Mision/>}/>
         <Route path='/we' element={<Nosotros/>}/>
         <Route path='/do' element={<Portfolio/>}/>

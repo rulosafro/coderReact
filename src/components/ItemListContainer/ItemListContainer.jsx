@@ -28,7 +28,7 @@ export const ItemListContainer = () => {
     }, [categoryId])
 
   return (
-    <div>
+    <div className='container mx-auto px-4'>
         <Filtros/>
         <ItemList productos={productos}/>
     </div>
