@@ -4,24 +4,34 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router';
 
 
-const ItemDetailContainer = (itemId) => {
+const ItemDetailContainer = () => {
   
   const [item, setItem] = useState(null)
-  const { categoryId } = useParams()
+  const [error, setError] = useState(null)
+  const { itemId } = useParams()
+
+  console.log(itemId);
   
   useEffect(() => {
-    pedirItemPorId(Number(itemId))
-      .then((data) => {
-        setItem(data)
-      })
-  }, [itemId])
+    setError(null)
 
+    pedirItemPorId( Number(itemId) )
+      .then((data) => {
+        console.log(data)
+        setItem(data)})
+      .catch((err) => {
+        setError(err.error)
+      })
+    }, [itemId])
 
   return (
     <div>
       {
-        item && <ItemDetail {...item}/>
+        error
+        ? error
+        : item && <ItemDetail {...item}/>
       }
+      <p>Hola</p>
     </div>
   )
 }

@@ -2,18 +2,21 @@ import {useEffect, useState} from 'react'
 import { pedirDatos} from '../helpers/pedirDatos.jsx'
 import ItemList from "../ItemList/ItemList.jsx";
 import { useParams } from 'react-router';
+import { Filtros } from '../Filtros/Filtros.jsx'
 
 
 
 export const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
-    const { categoryId } = useParams()
-    console.log( categoryId)
+    const { categoryId, busqueda } = useParams()
+    console.log( busqueda)
 
     useEffect(() => {
         pedirDatos()
             .then((res) => {
-                if (categoryId) {
+                if (busqueda) {
+                    setProductos( res.filter(prod => prod.name.includes(busqueda)))
+                } else if (categoryId) {
                     setProductos(res.filter(prod => prod.category === categoryId))
                 } else {
                     setProductos(res)
@@ -26,6 +29,7 @@ export const ItemListContainer = () => {
 
   return (
     <div>
+        <Filtros/>
         <ItemList productos={productos}/>
     </div>
   )

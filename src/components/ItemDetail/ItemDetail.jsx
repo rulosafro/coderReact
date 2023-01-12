@@ -1,11 +1,5 @@
-import React from 'react'
-import { useNavigate } from 'react-router'
+const ItemDetail = ({id, name, stock, category, image, description, price }) => {
 
-const ItemDetail = (id, name, stock, category, image, description, price) => {
-  const navigate = useNavigate()
-  const handleVoler = () => {
-    navigate(-1)
-  }
 
   return (
     <div>
@@ -14,6 +8,7 @@ const ItemDetail = (id, name, stock, category, image, description, price) => {
       <small>{category}</small>
       <p> {description}</p>
       <p>Precio: {price}</p>
+      <p>{id}</p>
     </div>
   )
 }
