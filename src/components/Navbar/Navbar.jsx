@@ -3,7 +3,7 @@ import CustomizedBadges from "../CartWidget/CartWidget.jsx";
 import { Link } from 'react-router-dom';
 // @import '../../styles/_colorSass';
 
-export const Navbar = ({bg = "#dddd"}) => {
+export const Navbar = ({bg = ""}) => {
 
     return (
         <header className='.navBarRam' style={{background: bg}}>
@@ -14,6 +14,7 @@ export const Navbar = ({bg = "#dddd"}) => {
                 <Link to="/what">What</Link>
                 <Link to="/we">We</Link>
                 <Link to="/do">Do</Link>
+                <Link to="/Formulario">Form</Link>
                 <span>|</span>
                 <Link to="/idealab">IdeaLab</Link>
                 <span>|</span>

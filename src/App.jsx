@@ -10,6 +10,7 @@ import { Error404 } from './components/Error404/Error404'
 import { Nosotros } from './components/Nosotros/Nosotros'
 import { Mision } from './components/Mision/Mision'
 import { Portfolio } from './components/Portfolio/Portfolio'
+import { Formulario } from './components/Formulario/Formulario'
 
 function App() {
 
@@ -29,11 +30,12 @@ function App() {
         <Route path='/what' element={<Mision/>}/>
         <Route path='/we' element={<Nosotros/>}/>
         <Route path='/do' element={<Portfolio/>}/>
-        <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
+        <Route path='/formulario' element={<Formulario/>}/>
+        <Route path='/coderReact/formulario' element={<Formulario/>}/>
         <Route path='/busqueda/:busqueda' element={<ItemListContainer/>}/>
+        <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
         <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
         <Route path='/coderReact/detail/:itemId' element={<ItemDetailContainer/>}/>
-        <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
         <Route path='/error404' element={ <Error404/>}/>
         <Route path='*' element={ <Error404/>} />
         {/* <Route path='*' element={ <Navigate to={"/error404"}/>}/> */}
