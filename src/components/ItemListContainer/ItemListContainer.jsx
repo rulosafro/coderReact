@@ -9,7 +9,7 @@ import { Filtros } from '../Filtros/Filtros.jsx'
 export const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const { categoryId, busqueda } = useParams()
-    console.log( busqueda)
+    // console.log( busqueda)
 
     useEffect(() => {
         pedirDatos()

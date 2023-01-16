@@ -1,12 +1,13 @@
 import './Navbar.sass'
 import CustomizedBadges from "../CartWidget/CartWidget.jsx";
 import { Link } from 'react-router-dom';
+import { CartWidget2 } from '../CartWidget2/CartWidget2';
 // @import '../../styles/_colorSass';
 
-export const Navbar = ({bg = ""}) => {
-
+export const Navbar = () => {
+// {bg = ""}
     return (
-        <header className='.navBarRam' style={{background: bg}}>
+        <header className='.navBarRam'>
             <Link to="/" className='navBarRam__Logo'><h1 className='navBarRam__Logo'>RulosAfro Studio</h1></Link>
             <div></div>
             <div></div>
@@ -18,8 +19,11 @@ export const Navbar = ({bg = ""}) => {
                 <span>|</span>
                 <Link to="/idealab">IdeaLab</Link>
                 <span>|</span>
-                <CustomizedBadges/>
+                <CartWidget2/>
             </nav>
         </header>
     )
 }
+
+
+{/* <CustomizedBadges/> */}
