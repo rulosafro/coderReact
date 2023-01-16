@@ -11,18 +11,23 @@ import { Portfolio } from './components/Portfolio/Portfolio'
 import { Formulario } from './components/Formulario/Formulario'
 import { MyCartContext, MyCartProvider } from './components/context/MyCartContext'
 import { Cart } from './components/Cart/Cart'
+// import { Login } from './components/Login/Login'
 
 function App() {
 
   return (
     <MyCartProvider>
       <BrowserRouter>
-        <Navbar/>
+        <Routes>
+          {/* <Route path='/login' element={<Login}/> */}
+        </Routes>
 
+
+        <Navbar/>
         <Routes>
           <Route path='/' element={<ItemListContainer/>}/>
           <Route path='/coderReact' element={<ItemListContainer/>}/>
-          <Route path='/what' element={<Mision/>}/>
+          <Route path='/coderReact/what' element={<Mision/>}/>
           <Route path='/we' element={<Nosotros/>}/>
           <Route path='/do' element={<Portfolio/>}/>
           <Route path='/cart' element={<Cart/>}/>
